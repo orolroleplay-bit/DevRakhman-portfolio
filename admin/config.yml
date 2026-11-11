@@ -1,0 +1,116 @@
+# ===================================================================
+#  DevRakhman Portfolio — Decap CMS sozlamalari
+#  MUHIM: "repo" qiymatini o'zingizning GitHub repositoriyangiz bilan
+#  almashtiring (masalan: "rakhman/DevRakhman-portfolio").
+# ===================================================================
+
+backend:
+  name: github
+  repo: "username/DevRakhman-portfolio"
+  branch: main
+  # GitHub backend uchun OAuth server kerak bo'ladi (Netlify, Cloudflare Worker va h.k.).
+  # OAuth proxy manzilingizni quyidagi qatorlarga yozing (izohdan chiqaring):
+  # base_url: https://your-oauth-proxy.example.com
+  # auth_endpoint: auth
+
+# Lokal rejimda sinash uchun: npx decap-server
+local_backend: true
+
+publish_mode: simple
+media_folder: "img/uploads"
+public_folder: "/img/uploads"
+# site_url: https://your-site.example.com
+# display_url: https://your-site.example.com
+logo_url: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/svgs/solid/code.svg"
+
+collections:
+  - name: "site"
+    label: "Sayt kontenti"
+    editor:
+      preview: false
+    files:
+      # ------------------------------------------------ HERO
+      - name: "hero"
+        label: "Hero bo'limi"
+        file: "content/hero.json"
+        fields:
+          - { label: "Salomlashish matni", name: "greeting", widget: "string", default: "Assalomu alaykum, men" }
+          - { label: "Ism-sharif", name: "name", widget: "string", default: "DevRakhman" }
+          - { label: "Unvon (Hero va Men haqimda bo'limida ko'rinadi)", name: "title", widget: "string", default: "Full-Stack Dasturchi" }
+          - label: "Yozilib o'zgaruvchi matnlar (typing animatsiyasi)"
+            name: "typing"
+            widget: "list"
+            min: 1
+            hint: "Har bir qator alohida jumla sifatida yoziladi"
+            field: { label: "Matn", name: "text", widget: "string" }
+          - { label: "Bio matni", name: "bio", widget: "text" }
+          - { label: "Birinchi tugma matni", name: "cta_primary", widget: "string", default: "Loyihalarni ko'rish" }
+          - { label: "Ikkinchi tugma matni", name: "cta_secondary", widget: "string", default: "Bog'lanish" }
+
+      # ------------------------------------------------ ABOUT
+      - name: "about"
+        label: "Men haqimda"
+        file: "content/about.json"
+        fields:
+          - { label: "Sarlavha", name: "heading", widget: "string" }
+          - { label: "Matn (abzaslar orasida bo'sh qator qoldiring)", name: "text", widget: "text" }
+          - { label: "Joylashuv", name: "location", widget: "string" }
+          - { label: "Tillar", name: "languages", widget: "string" }
+          - label: "Statistika"
+            name: "stats"
+            widget: "list"
+            summary: "{{fields.label}}: {{fields.value}}"
+            fields:
+              - { label: "Qiymat (raqam)", name: "value", widget: "number", value_type: "int", min: 0 }
+              - { label: "Izoh", name: "label", widget: "string" }
+
+      # ------------------------------------------------ SKILLS
+      - name: "skills"
+        label: "Ko'nikmalar"
+        file: "content/skills.json"
+        fields:
+          - label: "Ko'nikmalar ro'yxati"
+            name: "skills"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.level}}%"
+            fields:
+              - { label: "Nomi", name: "name", widget: "string" }
+              - { label: "Darajasi (0–100)", name: "level", widget: "number", value_type: "int", min: 0, max: 100, default: 80 }
+              - { label: "Ikonka klassi (Font Awesome 6)", name: "icon", widget: "string", default: "fa-solid fa-code", hint: "Masalan: fa-brands fa-js yoki fa-solid fa-database" }
+
+      # ------------------------------------------------ PROJECTS
+      - name: "projects"
+        label: "Loyihalar"
+        file: "content/projects.json"
+        fields:
+          - label: "Loyihalar ro'yxati"
+            name: "projects"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.category}})"
+            fields:
+              - { label: "Nomi", name: "title", widget: "string" }
+              - { label: "Tavsifi", name: "description", widget: "text" }
+              - label: "Toifa"
+                name: "category"
+                widget: "select"
+                default: "web"
+                options:
+                  - { label: "Web", value: "web" }
+                  - { label: "Bot", value: "bot" }
+              - label: "Ishlatilgan texnologiyalar"
+                name: "tech"
+                widget: "list"
+                default: []
+                field: { label: "Texnologiya", name: "name", widget: "string" }
+              - { label: "Demo havola", name: "demo", widget: "string", required: false, hint: "https:// bilan boshlansin" }
+              - { label: "GitHub havola", name: "github", widget: "string", required: false, hint: "https:// bilan boshlansin" }
+              - { label: "Rasm", name: "image", widget: "image", required: false }
+
+      # ------------------------------------------------ CONTACT
+      - name: "contact"
+        label: "Aloqa ma'lumotlari"
+        file: "content/contact.json"
+        fields:
+          - { label: "Telegram havolasi", name: "telegram", widget: "string", hint: "Masalan: https://t.me/devrakhman" }
+          - { label: "GitHub havolasi", name: "github", widget: "string", hint: "Masalan: https://github.com/devrakhman" }
+          - { label: "Email", name: "email", widget: "string", hint: "Masalan: devrakhman@gmail.com" }

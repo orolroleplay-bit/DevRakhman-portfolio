@@ -1,0 +1,11 @@
+{
+  "heading": "Kod yozish — mening ishim ham, sevimli mashg'ulotim ham.",
+  "text": "Men veb-dasturlash bilan shug'ullanaman va sodda g'oyalarni tez, chiroyli hamda qulay mahsulotlarga aylantirishni yaxshi ko'raman. Frontend'da toza HTML, CSS va JavaScript bilan ishlayman, backend va avtomatlashtirish uchun esa Cloudflare hamda Telegram Bot API'dan foydalanaman.\n\nHar bir loyihada asosiy e'tiborim tezlik, moslashuvchan dizayn va foydalanuvchi qulayligiga qaratiladi. Doim yangi texnologiyalarni o'rganib, ko'nikmalarimni oshirib boraman.",
+  "location": "O'zbekiston",
+  "languages": "O'zbek, Rus, Ingliz",
+  "stats": [
+    { "value": 20, "label": "Tugallangan loyiha" },
+    { "value": 3, "label": "Yillik tajriba" },
+    { "value": 15, "label": "Telegram bot" }
+  ]
+}

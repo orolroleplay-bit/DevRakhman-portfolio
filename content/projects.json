@@ -1,0 +1,40 @@
+{
+  "projects": [
+    {
+      "title": "Shaxsiy Portfolio",
+      "description": "Glassmorphism uslubidagi, to'liq responsive va Decap CMS bilan boshqariladigan portfolio sayt.",
+      "category": "web",
+      "tech": ["HTML", "CSS", "JavaScript", "Decap CMS"],
+      "demo": "https://devrakhman.pages.dev",
+      "github": "https://github.com/devrakhman/portfolio",
+      "image": ""
+    },
+    {
+      "title": "Kutubxona Boti",
+      "description": "Kitoblarni qidirish, yuklab olish va sevimlilar ro'yxatini yuritish imkonini beruvchi Telegram bot.",
+      "category": "bot",
+      "tech": ["Telegram API", "Cloudflare Workers", "KV"],
+      "demo": "https://t.me/devrakhman",
+      "github": "https://github.com/devrakhman/library-bot",
+      "image": ""
+    },
+    {
+      "title": "URL Qisqartirgich",
+      "description": "Cloudflare Workers va KV xotirasi asosida ishlaydigan tezkor havola qisqartirish xizmati.",
+      "category": "web",
+      "tech": ["Workers", "KV", "JavaScript"],
+      "demo": "https://short.devrakhman.workers.dev",
+      "github": "https://github.com/devrakhman/url-shortener",
+      "image": ""
+    },
+    {
+      "title": "Vazifalar Boti",
+      "description": "Kunlik vazifalarni qo'shish, eslatma olish va bajarilganlarini belgilash uchun yordamchi bot.",
+      "category": "bot",
+      "tech": ["Telegram API", "Webhook", "JavaScript"],
+      "demo": "https://t.me/devrakhman",
+      "github": "https://github.com/devrakhman/todo-bot",
+      "image": ""
+    }
+  ]
+}
